@@ -21,16 +21,9 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-			
- 
-				<artifactId>maven-clean-plugin</artifactId>
+			        <artifactId>maven-clean-plugin</artifactId>
 				<version>3.0.0</version>
-			</plugin>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
+				
 			</plugin>
 			
             <plugin>
@@ -42,13 +35,14 @@
                   <cloudHubDeployment>
                 <uri>https://anypoint.mulesoft.com/</uri>
                 <muleVersion>${app.runtime}</muleVersion>
-                <username>${username}</username>
-                <password>${password}</password>
-                <applicationName>${project.artifactId}</applicationName>
-                <environment>Sandbox</environment>
+                <username>${anypoint.username}</username>
+                <password>${anypoint.password}</password>
+                <applicationName>${appname}</applicationName>
+                <environment>${env}</environment>
+	        <businessGroup>${business</businessGroup>
                 <workerType>${workerType}</workerType>
-                <workers>1</workers>
-                <objectStoreV2>false</objectStoreV2>
+                <workers>${workers}</workers>
+                <objectStoreV2>true</objectStoreV2>
                 <region> ${region} </region>
                   </cloudHubDeployment>
             </configuration>
